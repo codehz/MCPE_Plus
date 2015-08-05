@@ -55,7 +55,7 @@
             android:layout_marginRight="@dimen/fab_margin_right"
             android:src="@drawable/plus"
             app:borderWidth="0dp"
-            app:fabSize="normal" />
+            app:fabSize="normal"  />
 
     </android.support.design.widget.CoordinatorLayout>
 
