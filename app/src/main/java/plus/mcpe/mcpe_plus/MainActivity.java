@@ -3,6 +3,8 @@ package plus.mcpe.mcpe_plus;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -14,6 +16,8 @@ import plus.mcpe.mcpe_plus.model.DataModel;
 import plus.mcpe.mcpe_plus.view.DataView;
 
 public class MainActivity extends AppCompatActivity {
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle actionBarDrawerToggle;
     ViewPager pager;
     TabLayout tab;
     DataModel[] dataModels = new DataModel[4];
@@ -24,11 +28,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        //noinspection ConstantConditions
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        actionBarDrawerToggle =
+                new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.app_name, R.string.app_name);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
         tab = (TabLayout) findViewById(R.id.tabLayout);
         pager = (ViewPager) findViewById(R.id.viewPager);
         testData();
         setupViewPager();
         setupTabLayout();
+    }
+
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        actionBarDrawerToggle.syncState();
     }
 
     //TODO:使用正式数据
