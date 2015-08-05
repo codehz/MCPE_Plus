@@ -54,7 +54,8 @@ public class CircleImageView extends ImageView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);//assert width=height
+        //noinspection SuspiciousNameCombination
+        setMeasuredDimension(widthMeasureSpec, widthMeasureSpec);//assert width=height
     }
 
     private Bitmap drawable2Bitmap(Drawable d) {
