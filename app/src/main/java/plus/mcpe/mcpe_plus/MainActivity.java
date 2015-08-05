@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         dataModels[0] = dataModels[1] = dataModels[2] = dataModels[3] = new DataModel() {
             @Override
             public int getCount() {
-                return 5;
+                return 55;
             }
 
             @Override
