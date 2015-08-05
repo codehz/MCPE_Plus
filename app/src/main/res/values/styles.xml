@@ -4,6 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorPrimary" tools:targetApi="lollipop">@color/colorPrimary</item>
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorAccent" tools:targetApi="lollipop">@color/colorFab</item>
+        <item name="colorAccent">@color/colorFab</item>
         <item name="android:colorPrimaryDark" tools:targetApi="lollipop">@color/colorPrimary</item>
     </style>
 
