@@ -3,4 +3,5 @@
     <color name="colorPrimary">#03a9f4</color>
     <color name="colorPrimaryDark">#0288d1</color>
     <color name="colorFab">#FF9800</color>
+	<color name="api19mainsts">#03a9f4</color><!--安卓4.4下的main状态栏颜色-->
 </resources>
