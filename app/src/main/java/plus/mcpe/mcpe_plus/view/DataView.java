@@ -1,10 +1,8 @@
 package plus.mcpe.mcpe_plus.view;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,23 +12,14 @@ import plus.mcpe.mcpe_plus.model.DataModel;
 
 public class DataView extends RecyclerView {
     public DataModel model;
+    private Activity activity;
 
-    public DataView(Context context) {
-        this(context, null);
-    }
-
-    public DataView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public DataView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+    public DataView(Activity context, DataModel dataModel) {
+        super(context);
+        activity = context;
         setLayoutManager(new LinearLayoutManager(context));
-
-    }
-
-    public void setDataModel(DataModel dataModel) {
         model = dataModel;
+        setAdapter(new DataViewAdapter());
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -49,14 +38,14 @@ public class DataView extends RecyclerView {
     class DataViewAdapter extends RecyclerView.Adapter<ViewHolder> {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(getContext())
-                    .inflate(R.layout.view_card, DataView.this, false);
+            View view = activity.getLayoutInflater().inflate(R.layout.view_card, parent, false);
+
             return new ViewHolder(view);
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.setText(model.getContent(position));
+            holder.setText(model.getTitle(position));
         }
 
         @Override
