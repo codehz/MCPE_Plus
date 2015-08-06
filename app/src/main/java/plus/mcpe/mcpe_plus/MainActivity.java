@@ -79,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
             public String getTitle(int position) {
                 return "test";
             }
+
+            @Override
+            public String getImageUri(int position) {
+                return "drawable://" + R.drawable.minecraft;
+            }
         };
         for (int i = 0; i < 4; i++) {
             dataViews[i] = new DataView(this, dataModels[i]);
