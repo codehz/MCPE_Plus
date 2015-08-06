@@ -9,7 +9,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/menu_drawer"
-        app:insetForeground="#FFF" />
+        app:headerLayout="@layout/view_head"
+        app:insetForeground="#0000" />
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/main_content"
