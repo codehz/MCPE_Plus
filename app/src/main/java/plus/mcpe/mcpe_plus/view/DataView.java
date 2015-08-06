@@ -1,12 +1,15 @@
 package plus.mcpe.mcpe_plus.view;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import plus.mcpe.mcpe_plus.ContentActivity;
 import plus.mcpe.mcpe_plus.R;
 import plus.mcpe.mcpe_plus.model.DataModel;
 
@@ -27,6 +30,13 @@ public class DataView extends RecyclerView {
 
         public ViewHolder(View view) {
             super(view);
+            view.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(@NonNull View v) {
+                    Intent intent = new Intent(activity, ContentActivity.class);
+                    activity.startActivity(intent);
+                }
+            });
             textView = (TextView) view.findViewById(R.id.text);
         }
 
