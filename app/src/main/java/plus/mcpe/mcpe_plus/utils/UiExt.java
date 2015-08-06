@@ -8,7 +8,7 @@ import plus.mcpe.mcpe_plus.MainApplication;
 
 public class UiExt {
     public static int getStatusBarHeight() {
-        int ret = 0;
+        int ret = 38;
         try {
             Class<?> aClass = Class.forName("com.android.internal.R$dimen");
             Object object = aClass.newInstance();
