@@ -1,6 +1,8 @@
 package plus.mcpe.mcpe_plus;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import plus.mcpe.mcpe_plus.model.DataModel;
+import plus.mcpe.mcpe_plus.utils.UiExt;
 import plus.mcpe.mcpe_plus.view.DataView;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        setupStatusBar();
         //noinspection ConstantConditions
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -38,8 +42,18 @@ public class MainActivity extends AppCompatActivity {
         tab = (TabLayout) findViewById(R.id.tabLayout);
         pager = (ViewPager) findViewById(R.id.viewPager);
         testData();
+
         setupViewPager();
         setupTabLayout();
+    }
+
+    private void setupStatusBar() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP
+                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //alse app_bar
+            AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+            appBarLayout.setPadding(0, UiExt.getStatusBarHeight(), 0, 0);
+        }
     }
 
     @Override
