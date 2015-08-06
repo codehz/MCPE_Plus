@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import plus.mcpe.mcpe_plus.model.DataModel;
 import plus.mcpe.mcpe_plus.utils.UiExt;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        //setupStatusBar();
+        setupStatusBar();
         //noinspection ConstantConditions
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -48,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupStatusBar() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP
-                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            //alse app_bar
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            ImageView imageView = (ImageView) findViewById(R.id.image);
             AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+            imageView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UiExt.getStatusBarHeight()));
             appBarLayout.setPadding(0, UiExt.getStatusBarHeight(), 0, 0);
         }
     }
