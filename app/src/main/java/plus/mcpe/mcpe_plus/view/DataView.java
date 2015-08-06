@@ -7,7 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import plus.mcpe.mcpe_plus.ContentActivity;
 import plus.mcpe.mcpe_plus.R;
@@ -26,6 +29,7 @@ public class DataView extends RecyclerView {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView = null;
         TextView textView = null;
 
         public ViewHolder(View view) {
@@ -37,7 +41,13 @@ public class DataView extends RecyclerView {
                     activity.startActivity(intent);
                 }
             });
+            imageView = (ImageView) view.findViewById(R.id.image);
             textView = (TextView) view.findViewById(R.id.text);
+        }
+
+        public void setImage(String uri) {
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(uri, imageView);
         }
 
         public void setText(CharSequence charSequence) {
@@ -55,6 +65,7 @@ public class DataView extends RecyclerView {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
+            holder.setImage(model.getImageUri(position));
             holder.setText(model.getTitle(position));
         }
 
