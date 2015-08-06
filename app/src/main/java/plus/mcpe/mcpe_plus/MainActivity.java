@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public String getImageUri(int position) {
                 //universal image loader support uri
-                return "http://img0.imgtn.bdimg.com/it/u=3480713986,3149613714&fm=21&gp=0.jpg";
+                return "http://img4.duitang.com/uploads/item/201409/27/20140927234153_NGWJC.jpeg";
             }
         };
         for (int i = 0; i < 4; i++) {

@@ -2,6 +2,7 @@ package plus.mcpe.mcpe_plus.view;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import plus.mcpe.mcpe_plus.ContentActivity;
 import plus.mcpe.mcpe_plus.R;
@@ -47,7 +50,7 @@ public class DataView extends RecyclerView {
 
         public void setImage(String uri) {
             ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(uri, imageView);
+            imageLoader.displayImage(uri, imageView, new DisplayImageOptions.Builder().delayBeforeLoading(0).bitmapConfig(Bitmap.Config.RGB_565).build());
         }
 
         public void setText(CharSequence charSequence) {
