@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">MCPE_Plus</string>
+    <string name="app_name">MCPE+</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="map">地图</string>
+    <string name="js">模块</string>
+    <string name="skin">皮肤</string>
+    <string name="texture">材质</string>
 </resources>

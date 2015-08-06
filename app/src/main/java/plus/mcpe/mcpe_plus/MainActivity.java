@@ -127,13 +127,13 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "地图";
+                    return getString(R.string.map);
                 case 1:
-                    return "JS";
+                    return getString(R.string.js);
                 case 2:
-                    return "皮肤";
+                    return getString(R.string.skin);
                 case 3:
-                    return "材质";
+                    return getString(R.string.texture);
                 default:
                     return null;
             }
