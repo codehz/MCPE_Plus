@@ -6,9 +6,12 @@ import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -26,7 +29,7 @@ public class DataView extends RecyclerView {
     public DataView(Activity context, DataModel dataModel) {
         super(context);
         activity = context;
-        setLayoutManager(new LinearLayoutManager(context));
+        setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         model = dataModel;
         setAdapter(new DataViewAdapter());
     }
@@ -50,7 +53,8 @@ public class DataView extends RecyclerView {
 
         public void setImage(String uri) {
             ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(uri, imageView, new DisplayImageOptions.Builder().bitmapConfig(Bitmap.Config.RGB_565).build());
+            imageView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(imageView.getLayoutParams().height * Math.random() * 2 + 0.5)));
+            imageLoader.displayImage(uri, imageView, new DisplayImageOptions.Builder().delayBeforeLoading(0).bitmapConfig(Bitmap.Config.RGB_565).build());
         }
 
         public void setText(CharSequence charSequence) {

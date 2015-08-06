@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         dataModels[0] = dataModels[1] = dataModels[2] = dataModels[3] = new DataModel() {
             @Override
             public int getCount() {
-                return 1;
+                return 55;
             }
 
             @Override
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public String getImageUri(int position) {
                 //universal image loader support uri
-                return "http://img4.duitang.com/uploads/item/201409/27/20140927234153_NGWJC.jpeg";
+                return "http://img.minecraftxz.com/upload/images/WU6F.jpg";
             }
         };
         for (int i = 0; i < 4; i++) {
