@@ -40,7 +40,6 @@
                     app:tabMode="fixed" />
             </android.support.design.widget.AppBarLayout>
 
-
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
@@ -74,6 +73,5 @@
         app:headerLayout="@layout/view_head"
         app:insetForeground="#0000"
         app:menu="@menu/menu_drawer" />
-
 
 </android.support.v4.widget.DrawerLayout>

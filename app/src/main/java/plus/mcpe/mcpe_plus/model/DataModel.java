@@ -5,4 +5,5 @@ public interface DataModel {
     int getCount();
 
     String getTitle(int position);
+    String getImageUri(int position);
 }
