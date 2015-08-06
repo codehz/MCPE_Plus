@@ -82,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public String getImageUri(int position) {
-                return "drawable://" + R.drawable.minecraft;
+                //universal image loader support uri
+                return "http://g.hiphotos.baidu.com/zhidao/pic/item/77094b36acaf2edd9d014bd58f1001e93901931d.jpg";
             }
         };
         for (int i = 0; i < 4; i++) {

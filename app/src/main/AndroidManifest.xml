@@ -3,6 +3,8 @@
     package="plus.mcpe.mcpe_plus"
 	android:versionName="build0.0.150805.1">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
