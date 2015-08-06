@@ -50,7 +50,7 @@ public class DataView extends RecyclerView {
 
         public void setImage(String uri) {
             ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(uri, imageView, new DisplayImageOptions.Builder().delayBeforeLoading(0).bitmapConfig(Bitmap.Config.RGB_565).build());
+            imageLoader.displayImage(uri, imageView, new DisplayImageOptions.Builder().bitmapConfig(Bitmap.Config.RGB_565).build());
         }
 
         public void setText(CharSequence charSequence) {
